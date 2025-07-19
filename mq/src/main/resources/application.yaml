@@ -1,0 +1,18 @@
+spring:
+  application:
+  name: mq
+  jms:
+    listener:
+      min-concurrency: 10
+    pub-sub-domain: false # Use Queue do not use topic
+  mq:
+    queue: DEV.QUEUE.1
+
+ibm:
+  mq:
+    queue-manager: QM1
+    channel: DEV.APP.SVRCONN
+    conn-name: 192.168.1.108(1414)
+    user: app
+    password: passw0rd
+
