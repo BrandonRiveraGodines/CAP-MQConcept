@@ -2,6 +2,7 @@ package com.cap.concept.demo.mq.controller;
 
 import com.cap.concept.demo.mq.model.Person;
 import com.cap.concept.demo.mq.sender.MqSender;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,9 +20,9 @@ public class MessageController {
     }
 
     @PostMapping
-    public ResponseEntity<String> sendMessage(@RequestBody Person message) {
+    public ResponseEntity<String> sendMessage(@RequestBody Person message) throws JsonProcessingException {
         System.out.println("Mensaje recibido: " + message);
-        mqSender.send(message.toString());
+        mqSender.send(message);
         return ResponseEntity.ok("Mensaje enviado a MQ correctamente");
     }
 

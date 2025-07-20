@@ -20,11 +20,14 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation("org.springframework.boot:spring-boot-starter-activemq")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("mysql:mysql-connector-java:8.0.33")
 	implementation("com.ibm.mq:com.ibm.mq.jakarta.client:9.4.3.0")
 	implementation("org.projectlombok:lombok:1.18.38")
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	annotationProcessor("org.projectlombok:lombok:1.18.38")
 }
 
 tasks.named('test') {
