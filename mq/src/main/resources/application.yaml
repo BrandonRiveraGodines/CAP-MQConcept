@@ -7,6 +7,9 @@ spring:
     pub-sub-domain: false # Use Queue do not use topic
   mq:
     queue: DEV.QUEUE.1
+    queue2: DEV.QUEUE.2
+    queue3: DEV.QUEUE.3
+    queue4: DEV.DEAD.LETTER.QUEUE
 
   datasource:
     url: jdbc:mysql://localhost:3306/cap_samples
